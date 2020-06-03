@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		F542763F2487E98A00D589C8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = F542763E2487E98A00D589C8 /* main.swift */; };
+		F542764E2487EEDD00D589C8 /* dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F542764D2487EEDD00D589C8 /* dummy.m */; };
+		F54276512487EF5A00D589C8 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F54276502487EF5A00D589C8 /* libz.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,10 @@
 /* Begin PBXFileReference section */
 		F542763B2487E98A00D589C8 /* gcdwebserver_helloword */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = gcdwebserver_helloword; sourceTree = BUILT_PRODUCTS_DIR; };
 		F542763E2487E98A00D589C8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		F542764B2487EE9F00D589C8 /* GCDWebServer */ = {isa = PBXFileReference; lastKnownFileType = folder; path = GCDWebServer; sourceTree = "<group>"; };
+		F542764C2487EEDC00D589C8 /* gcdwebserver_helloword-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "gcdwebserver_helloword-Bridging-Header.h"; sourceTree = "<group>"; };
+		F542764D2487EEDD00D589C8 /* dummy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = dummy.m; sourceTree = "<group>"; };
+		F54276502487EF5A00D589C8 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F54276512487EF5A00D589C8 /* libz.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +50,7 @@
 			children = (
 				F542763D2487E98A00D589C8 /* gcdwebserver_helloword */,
 				F542763C2487E98A00D589C8 /* Products */,
+				F542764F2487EF5A00D589C8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,8 +66,19 @@
 			isa = PBXGroup;
 			children = (
 				F542763E2487E98A00D589C8 /* main.swift */,
+				F542764B2487EE9F00D589C8 /* GCDWebServer */,
+				F542764D2487EEDD00D589C8 /* dummy.m */,
+				F542764C2487EEDC00D589C8 /* gcdwebserver_helloword-Bridging-Header.h */,
 			);
 			path = gcdwebserver_helloword;
+			sourceTree = "<group>";
+		};
+		F542764F2487EF5A00D589C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F54276502487EF5A00D589C8 /* libz.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -94,6 +113,7 @@
 				TargetAttributes = {
 					F542763A2487E98A00D589C8 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 				};
 			};
@@ -120,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F542764E2487EEDD00D589C8 /* dummy.m in Sources */,
 				F542763F2487E98A00D589C8 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,10 +264,19 @@
 		F54276432487E98A00D589C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FQ7KF94K32;
 				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "gcdwebserver_helloword/gcdwebserver_helloword-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -254,10 +284,18 @@
 		F54276442487E98A00D589C8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FQ7KF94K32;
 				ENABLE_HARDENED_RUNTIME = YES;
+				HEADER_SEARCH_PATHS = "$(SDKROOT)/usr/include/libxml2";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "gcdwebserver_helloword/gcdwebserver_helloword-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
