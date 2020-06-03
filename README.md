@@ -14,5 +14,7 @@ The goal of this project is to document the steps to use the GCDWebServer librar
 - try to build/run app
 
 The following errors are displayed:
+```
 /Users/camptocamp/code/gcdwebserver_helloword/gcdwebserver_helloword/gcdwebserver_helloword-Bridging-Header.h:7:9: 'GCDWebServer/GCDWebServer.h' file not found
 unknown>:0: error: failed to emit precompiled header '/Users/camptocamp/Library/Developer/Xcode/DerivedData/gcdwebserver_helloword-awmbxrpwvjrbknhlczpghulgwqeq/Build/Intermediates.noindex/PrecompiledHeaders/gcdwebserver_helloword-Bridging-Header-swift_WCG2H2I4C6OF-clang_232AJ4LZ1EGPJ.pch' for bridging header '/Users/camptocamp/code/gcdwebserver_helloword/gcdwebserver_helloword/gcdwebserver_helloword-Bridging-Header.h'
+```
